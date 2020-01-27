@@ -9,7 +9,7 @@ static void child()
     printf("I'm child! my pid is %d.\n", getpid());
     fflush(stdout);
     execve("/bin/echo", args, NULL);
-    err(EXIT_FAILURE, "exec() failed");
+    err(EXIT_FAILURE, "exec() failed"); // Don't came here becase execve is done.
 }
 
 static void parent(pid_t pid_c)
